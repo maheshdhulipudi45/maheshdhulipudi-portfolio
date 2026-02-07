@@ -95,8 +95,7 @@ export default function Footer() {
 
         {/* BOTTOM */}
         <p className="py-4 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Mahesh Dhulipudi. Built with React &
-          Tailwind CSS.
+          © {new Date().getFullYear()} Mahesh Dhulipudi.
         </p>
       </div>
     </motion.footer>
