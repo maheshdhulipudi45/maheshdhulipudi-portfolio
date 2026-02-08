@@ -163,9 +163,10 @@
 
 
 
-
-import { motion } from "framer-motion";
+  import { motion } from "framer-motion";
 import { GithubIcon, ExternalLinkIcon } from "lucide-react";
+import type { ReactNode } from "react";
+
 import {
   SiReact,
   SiNodedotjs,
@@ -178,7 +179,7 @@ import {
 } from "react-icons/si";
 
 /* TECHNOLOGY ICON MAP */
-const techIcons: Record<string, JSX.Element> = {
+const techIcons: Record<string, ReactNode> = {
   React: <SiReact color="#61DAFB" />,
   "Node.js": <SiNodedotjs color="#3C873A" />,
   Express: <SiExpress color="#ffffff" />,
@@ -196,7 +197,7 @@ const projects = [
     title: "ThumblifyAI",
     subtitle: "AI Thumbnail Generator",
     description:
-      "An AI-powered application that generates high-quality YouTube thumbnails using prompts. Built with OpenAI integration, responsive UI, and modern full-stack architecture.",
+      "An AI-powered application that generates high-quality YouTube thumbnails using prompts with OpenAI integration and a modern full-stack architecture.",
     tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI", "Tailwind CSS"],
     github: "https://github.com/maheshdhulipudi45/Thumblify-AI.git",
     live: "https://thumblify-ai-murex.vercel.app/",
@@ -206,7 +207,7 @@ const projects = [
     title: "CampusFix",
     subtitle: "Campus Electrical Issue Management System",
     description:
-      "A MERN stack application for reporting and tracking campus electrical issues with JWT authentication and role-based access.",
+      "A MERN stack application for reporting and tracking campus electrical issues with authentication and role-based access.",
     tech: ["React", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/maheshdhulipudi45/CampusFix-Project.git",
     live: "https://campus-fix-project.vercel.app/",
@@ -226,7 +227,7 @@ const projects = [
     title: "RestroPoint",
     subtitle: "Restaurant Website",
     description:
-      "A modern restaurant website showcasing menu items, reservations, and services with a clean UI.",
+      "A modern restaurant website showcasing menu items, reservations, and services.",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/maheshdhulipudi45/RestroPointWebsite.git",
     live: "https://restro-point-website.vercel.app/",
@@ -236,7 +237,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="max-w-6xl mx-auto px-4 py-28">
-      
+
       {/* HEADING */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -261,7 +262,7 @@ export default function Projects() {
         </p>
       </motion.div>
 
-      {/* GRID → 2 x 2 */}
+      {/* GRID 2x2 */}
       <div className="grid gap-10 md:grid-cols-2">
         {projects.map((project, i) => (
           <motion.div
@@ -271,19 +272,15 @@ export default function Projects() {
             whileHover={{ y: -6 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12, type: "spring", stiffness: 160 }}
-            className="group rounded-3xl border border-purple-500/20
+            className="rounded-3xl border border-purple-500/20
             bg-gradient-to-b from-[#1a1333] to-[#120c24]
-            backdrop-blur-xl p-7
-            shadow-lg hover:shadow-purple-600/25
-            transition flex flex-col h-full"
+            backdrop-blur-xl p-7 shadow-lg
+            hover:shadow-purple-600/25 transition flex flex-col"
           >
-            {/* CATEGORY */}
-            <span className="inline-block mb-4 rounded-full
-            bg-purple-500/10 px-4 py-1 text-xs font-semibold text-purple-300">
+            <span className="mb-4 inline-block rounded-full bg-purple-500/10 px-4 py-1 text-xs font-semibold text-purple-300">
               {project.category}
             </span>
 
-            {/* TITLE */}
             <h3 className="text-xl font-semibold text-white mb-1">
               {project.title}
             </h3>
@@ -292,53 +289,48 @@ export default function Projects() {
               {project.subtitle}
             </p>
 
-            {/* CONTENT */}
-            <div className="flex-1">
-              <p className="text-gray-300 text-sm leading-relaxed mb-6 text-justify">
-                {project.description}
-              </p>
+            <p className="text-gray-300 text-sm mb-6">
+              {project.description}
+            </p>
 
-              {/* TECH ICONS */}
-              <div className="flex flex-wrap gap-3 mb-6">
-                {project.tech.map((tech) => (
-                  <div
-                    key={tech}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full
-                    bg-purple-500/10 border border-purple-500/20 text-xs text-purple-200"
-                  >
-                    {techIcons[tech]}
-                    {tech}
-                  </div>
-                ))}
-              </div>
+            {/* TECH ICONS */}
+            <div className="flex flex-wrap gap-3 mb-6">
+              {project.tech.map((tech) => (
+                <div
+                  key={tech}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full
+                  bg-purple-500/10 border border-purple-500/20 text-xs text-purple-200"
+                >
+                  {techIcons[tech]}
+                  {tech}
+                </div>
+              ))}
             </div>
 
             {/* ACTIONS */}
-            <div className="flex gap-3 mt-auto">
+            <div className="mt-auto flex gap-3">
               <a
                 href={project.github}
                 target="_blank"
-                className="flex-1 rounded-lg bg-black
-                py-2 text-sm text-white hover:bg-black/80
-                transition inline-flex items-center justify-center gap-2"
+                rel="noopener noreferrer"
+                className="flex-1 rounded-lg bg-black py-2 text-sm text-white
+                hover:bg-black/80 transition inline-flex items-center justify-center gap-2"
               >
                 <GithubIcon size={16} />
                 Code
               </a>
 
-              {project.live && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  className="flex-1 rounded-lg
-                  bg-gradient-to-r from-purple-500 to-pink-500
-                  py-2 text-sm text-white hover:opacity-90
-                  transition inline-flex items-center justify-center gap-2"
-                >
-                  <ExternalLinkIcon size={16} />
-                  Live
-                </a>
-              )}
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 rounded-lg bg-gradient-to-r
+                from-purple-500 to-pink-500 py-2 text-sm text-white
+                hover:opacity-90 transition inline-flex items-center justify-center gap-2"
+              >
+                <ExternalLinkIcon size={16} />
+                Live
+              </a>
             </div>
           </motion.div>
         ))}
