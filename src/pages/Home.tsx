@@ -14,8 +14,8 @@ export default function Home() {
             {/* <Features /> */}
             <Skills/>
             <InternshipSection/>
-            <EducationSection/>
             <Projects/>
+            <EducationSection/>
             <Certificates/>
             <ContactSection/>
           
