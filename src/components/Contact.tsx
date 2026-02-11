@@ -1,11 +1,19 @@
+
 // import { motion, useInView } from "framer-motion";
 // import { useRef, useState } from "react";
 // import type { FormEvent } from "react";
-// import { Send, Github, Linkedin, Mail, Phone } from "lucide-react";
+// import {
+//   Send,
+//   Mail,
+//   Phone,
+//   MapPin,
+//   Github,
+//   Linkedin,
+// } from "lucide-react";
 
 // export default function ContactSection() {
-//   const containerRef = useRef(null);
-//   const isInView = useInView(containerRef, { once: true });
+//   const ref = useRef(null);
+//   const isInView = useInView(ref, { once: true });
 
 //   const [formData, setFormData] = useState({
 //     name: "",
@@ -30,7 +38,7 @@
 //       {/* Background glow */}
 //       <div className="absolute inset-0 -z-10 ]" />
 
-//       <div ref={containerRef} className="max-w-6xl mx-auto px-4">
+//       <div ref={ref} className="max-w-6xl mx-auto px-4">
 //         {/* Heading */}
 //         <motion.div
 //           initial={{ opacity: 0, y: 40 }}
@@ -38,111 +46,152 @@
 //           transition={{ type: "spring", stiffness: 180 }}
 //           className="text-center mb-16"
 //         >
-//           <span className="text-sm uppercase tracking-widest text-indigo-400">
+//           <span className="text-sm uppercase tracking-widest text-purple-400">
 //             Contact
 //           </span>
 //           <h2 className="mt-3 text-3xl md:text-4xl font-bold">
-//             Let’s{" "}
-//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-//               Connect
+//             Get In{" "}
+//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+//               Touch
 //             </span>
 //           </h2>
 //           <p className="mt-4 text-gray-400 max-w-md mx-auto">
-//             Have an opportunity, project, or role in mind?
-//             I’m always open to discussing new ideas.
+//             Feel free to reach out for collaborations, projects, or opportunities.
 //           </p>
 //         </motion.div>
 
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-//           {/* LEFT INFO */}
+//         {/* MAIN GRID */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+//           {/* LEFT – CONTACT INFO */}
 //           <motion.div
-//             initial={{ opacity: 0, y: 40 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ delay: 0.15, type: "spring", stiffness: 180 }}
-//             className="space-y-6"
+//             initial={{ opacity: 0, x: -40 }}
+//             animate={isInView ? { opacity: 1, x: 0 } : {}}
+//             transition={{ delay: 0.1, type: "spring", stiffness: 180 }}
+//             className="rounded-3xl border border-purple-500/20 
+//             bg-gradient-to-b from-[#1a1333] to-[#120c24] 
+//             p-8 backdrop-blur-xl"
 //           >
-//             <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
-//               <h3 className="text-xl font-semibold mb-4">Get in touch</h3>
+//             <h3 className="text-xl font-semibold text-white mb-6">
+//               Contact Information
+//             </h3>
 
-//               <div className="space-y-4 text-gray-300 text-sm">
-//                 <div className="flex items-center gap-3">
-//                   <Mail className="size-4 text-indigo-400" />
+//             <div className="space-y-5 text-sm text-gray-300">
+//               <div className="flex items-start gap-4">
+//                 <Mail className="text-purple-400 mt-1" size={18} />
+//                 <div>
+//                   <p className="font-medium text-white">Email</p>
 //                   maheshdhulipudi45@gmail.com
-//                 </div>
-//                 <div className="flex items-center gap-3">
-//                   <Phone className="size-4 text-indigo-400" />
-//                   +91 76589 56116
-//                 </div>
-//                 <div className="flex items-center gap-3">
-//                   <Github className="size-4 text-indigo-400" />
-//                   github.com/maheshdhulipudi
-//                 </div>
-//                 <div className="flex items-center gap-3">
-//                   <Linkedin className="size-4 text-indigo-400" />
-//                   linkedin.com/in/maheshdhulipudi
 //                 </div>
 //               </div>
 
-//               <p className="mt-6 text-xs text-gray-400">
-//                 ⏱ Usually responds within 24 hours
-//               </p>
+//               <div className="flex items-start gap-4">
+//                 <Phone className="text-purple-400 mt-1" size={18} />
+//                 <div>
+//                   <p className="font-medium text-white">Phone</p>
+//                   +91 76589 56116
+//                 </div>
+//               </div>
+
+//               <div className="flex items-start gap-4">
+//                 <MapPin className="text-purple-400 mt-1" size={18} />
+//                 <div>
+//                   <p className="font-medium text-white">Location</p>
+//                   Amalapuram, Andhra Pradesh
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Social Icons */}
+//             <div className="flex gap-4 mt-8">
+//               <a
+//                 href="https://github.com/maheshdhulipudi"
+//                 target="_blank"
+//                 className="p-3 rounded-full bg-white/5 hover:bg-purple-500/20 transition"
+//               >
+//                 <Github size={18} />
+//               </a>
+//               <a
+//                 href="https://linkedin.com/in/maheshdhulipudi"
+//                 target="_blank"
+//                 className="p-3 rounded-full bg-white/5 hover:bg-purple-500/20 transition"
+//               >
+//                 <Linkedin size={18} />
+//               </a>
+//               <a
+//                 href="mailto:maheshdhulipudi45@gmail.com"
+//                 className="p-3 rounded-full bg-white/5 hover:bg-purple-500/20 transition"
+//               >
+//                 <Mail size={18} />
+//               </a>
 //             </div>
 //           </motion.div>
 
-//           {/* RIGHT FORM */}
+//           {/* RIGHT – FORM */}
 //           <motion.form
-//             initial={{ opacity: 0, y: 40 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ delay: 0.3, type: "spring", stiffness: 180 }}
+//             initial={{ opacity: 0, x: 40 }}
+//             animate={isInView ? { opacity: 1, x: 0 } : {}}
+//             transition={{ delay: 0.2, type: "spring", stiffness: 180 }}
 //             onSubmit={handleSubmit}
-//             className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 space-y-5"
+//             className="rounded-3xl border border-purple-500/20 
+//             bg-gradient-to-b from-[#1a1333] to-[#120c24] 
+//             p-8 backdrop-blur-xl space-y-5"
 //           >
+//             <h3 className="text-xl font-semibold text-white mb-2">
+//               Send a Message
+//             </h3>
+
 //             <div>
-//               <label className="block text-sm mb-2">Full Name</label>
+//               <label className="text-sm text-gray-300">Name</label>
 //               <input
 //                 value={formData.name}
 //                 onChange={(e) =>
 //                   setFormData({ ...formData, name: e.target.value })
 //                 }
-//                 placeholder="Your name"
-//                 className="w-full rounded-lg bg-black/30 border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-indigo-500"
+//                 className="mt-2 w-full rounded-lg bg-purple-900/40 
+//                 border border-purple-500/20 px-4 py-3 text-sm 
+//                 focus:outline-none focus:border-purple-400"
 //               />
 //             </div>
 
 //             <div>
-//               <label className="block text-sm mb-2">Email</label>
+//               <label className="text-sm text-gray-300">Email</label>
 //               <input
 //                 value={formData.email}
 //                 onChange={(e) =>
 //                   setFormData({ ...formData, email: e.target.value })
 //                 }
-//                 placeholder="your@email.com"
-//                 className="w-full rounded-lg bg-black/30 border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-indigo-500"
+//                 className="mt-2 w-full rounded-lg bg-purple-900/40 
+//                 border border-purple-500/20 px-4 py-3 text-sm 
+//                 focus:outline-none focus:border-purple-400"
 //               />
 //             </div>
 
 //             <div>
-//               <label className="block text-sm mb-2">Message</label>
+//               <label className="text-sm text-gray-300">Message</label>
 //               <textarea
 //                 rows={5}
 //                 value={formData.message}
 //                 onChange={(e) =>
 //                   setFormData({ ...formData, message: e.target.value })
 //                 }
-//                 placeholder="Tell me about the role or project..."
-//                 className="w-full rounded-lg bg-black/30 border border-white/10 px-4 py-3 text-sm resize-none focus:outline-none focus:border-indigo-500"
+//                 className="mt-2 w-full rounded-lg bg-purple-900/40 
+//                 border border-purple-500/20 px-4 py-3 text-sm resize-none 
+//                 focus:outline-none focus:border-purple-400"
 //               />
 //             </div>
 
 //             <button
 //               disabled={sending}
-//               className="w-full flex items-center justify-center gap-2 rounded-full 
-//               bg-gradient-to-r from-indigo-500 to-purple-600 
+//               className="w-full mt-2 rounded-lg 
+//               bg-gradient-to-r from-purple-500 to-pink-500 
 //               py-3 text-sm font-medium text-white 
-//               hover:opacity-90 transition disabled:opacity-60"
+//               hover:opacity-90 transition"
 //             >
-//               <Send size={16} />
-//               {sending ? "Sending..." : "Send Message"}
+//               <span className="inline-flex items-center gap-2 justify-center">
+//                 <Send size={16} />
+//                 {sending ? "Sending..." : "Send Message"}
+//               </span>
 //             </button>
 //           </motion.form>
 //         </div>
@@ -151,9 +200,11 @@
 //   );
 // }
 
+
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
+
 import {
   Send,
   Mail,
@@ -172,6 +223,7 @@ export default function ContactSection() {
     email: "",
     message: "",
   });
+
   const [sending, setSending] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
@@ -187,11 +239,13 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="relative py-28 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 -z-10 ]" />
+      
+      {/* Soft Glow Background */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.15),transparent_60%)]" />
 
       <div ref={ref} className="max-w-6xl mx-auto px-4">
-        {/* Heading */}
+
+        {/* HEADING */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -201,12 +255,14 @@ export default function ContactSection() {
           <span className="text-sm uppercase tracking-widest text-purple-400">
             Contact
           </span>
+
           <h2 className="mt-3 text-3xl md:text-4xl font-bold">
             Get In{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
               Touch
             </span>
           </h2>
+
           <p className="mt-4 text-gray-400 max-w-md mx-auto">
             Feel free to reach out for collaborations, projects, or opportunities.
           </p>
@@ -214,39 +270,43 @@ export default function ContactSection() {
 
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          
-          {/* LEFT – CONTACT INFO */}
+
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.1, type: "spring", stiffness: 180 }}
-            className="rounded-3xl border border-purple-500/20 
-            bg-gradient-to-b from-[#1a1333] to-[#120c24] 
+            className="rounded-3xl border border-purple-500/20
+            bg-gradient-to-b from-[#1a1333] to-[#120c24]
             p-8 backdrop-blur-xl"
           >
             <h3 className="text-xl font-semibold text-white mb-6">
               Contact Information
             </h3>
 
-            <div className="space-y-5 text-sm text-gray-300">
-              <div className="flex items-start gap-4">
-                <Mail className="text-purple-400 mt-1" size={18} />
+            <div className="space-y-6 text-sm text-gray-300">
+
+              {/* EMAIL */}
+              <div className="flex items-start gap-4 group">
+                <Mail size={20} color="#EA4335" />
                 <div>
                   <p className="font-medium text-white">Email</p>
                   maheshdhulipudi45@gmail.com
                 </div>
               </div>
 
+              {/* PHONE */}
               <div className="flex items-start gap-4">
-                <Phone className="text-purple-400 mt-1" size={18} />
+                <Phone size={20} color="#22C55E" />
                 <div>
                   <p className="font-medium text-white">Phone</p>
                   +91 76589 56116
                 </div>
               </div>
 
+              {/* LOCATION */}
               <div className="flex items-start gap-4">
-                <MapPin className="text-purple-400 mt-1" size={18} />
+                <MapPin size={20} color="#F43F5E" />
                 <div>
                   <p className="font-medium text-white">Location</p>
                   Amalapuram, Andhra Pradesh
@@ -254,90 +314,95 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Social Icons */}
-            <div className="flex gap-4 mt-8">
+            {/* SOCIAL LINKS */}
+            <div className="flex gap-4 mt-10">
+
+              {/* GITHUB */}
               <a
-                href="https://github.com/maheshdhulipudi"
+                href="https://github.com/maheshdhulipudi45"
                 target="_blank"
-                className="p-3 rounded-full bg-white/5 hover:bg-purple-500/20 transition"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-white/5
+                hover:bg-white/10 transition transform hover:scale-110"
               >
-                <Github size={18} />
+                <Github size={20} color="#ffffff" />
               </a>
+
+              {/* LINKEDIN */}
               <a
                 href="https://linkedin.com/in/maheshdhulipudi"
                 target="_blank"
-                className="p-3 rounded-full bg-white/5 hover:bg-purple-500/20 transition"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-white/5
+                hover:bg-[#0A66C2]/20 transition transform hover:scale-110"
               >
-                <Linkedin size={18} />
+                <Linkedin size={20} color="#0A66C2" />
               </a>
+
+              {/* MAIL */}
               <a
                 href="mailto:maheshdhulipudi45@gmail.com"
-                className="p-3 rounded-full bg-white/5 hover:bg-purple-500/20 transition"
+                className="p-3 rounded-full bg-white/5
+                hover:bg-[#EA4335]/20 transition transform hover:scale-110"
               >
-                <Mail size={18} />
+                <Mail size={20} color="#EA4335" />
               </a>
             </div>
           </motion.div>
 
-          {/* RIGHT – FORM */}
+          {/* RIGHT SIDE FORM */}
           <motion.form
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, type: "spring", stiffness: 180 }}
             onSubmit={handleSubmit}
-            className="rounded-3xl border border-purple-500/20 
-            bg-gradient-to-b from-[#1a1333] to-[#120c24] 
+            className="rounded-3xl border border-purple-500/20
+            bg-gradient-to-b from-[#1a1333] to-[#120c24]
             p-8 backdrop-blur-xl space-y-5"
           >
-            <h3 className="text-xl font-semibold text-white mb-2">
+            <h3 className="text-xl font-semibold text-white">
               Send a Message
             </h3>
 
-            <div>
-              <label className="text-sm text-gray-300">Name</label>
-              <input
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-                className="mt-2 w-full rounded-lg bg-purple-900/40 
-                border border-purple-500/20 px-4 py-3 text-sm 
-                focus:outline-none focus:border-purple-400"
-              />
-            </div>
+            <input
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              className="w-full rounded-lg bg-purple-900/40
+              border border-purple-500/20 px-4 py-3 text-sm
+              focus:outline-none focus:border-purple-400"
+            />
 
-            <div>
-              <label className="text-sm text-gray-300">Email</label>
-              <input
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                className="mt-2 w-full rounded-lg bg-purple-900/40 
-                border border-purple-500/20 px-4 py-3 text-sm 
-                focus:outline-none focus:border-purple-400"
-              />
-            </div>
+            <input
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              className="w-full rounded-lg bg-purple-900/40
+              border border-purple-500/20 px-4 py-3 text-sm
+              focus:outline-none focus:border-purple-400"
+            />
 
-            <div>
-              <label className="text-sm text-gray-300">Message</label>
-              <textarea
-                rows={5}
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-                className="mt-2 w-full rounded-lg bg-purple-900/40 
-                border border-purple-500/20 px-4 py-3 text-sm resize-none 
-                focus:outline-none focus:border-purple-400"
-              />
-            </div>
+            <textarea
+              rows={5}
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
+              className="w-full rounded-lg bg-purple-900/40
+              border border-purple-500/20 px-4 py-3 text-sm resize-none
+              focus:outline-none focus:border-purple-400"
+            />
 
             <button
               disabled={sending}
-              className="w-full mt-2 rounded-lg 
-              bg-gradient-to-r from-purple-500 to-pink-500 
-              py-3 text-sm font-medium text-white 
+              className="w-full rounded-lg
+              bg-gradient-to-r from-purple-500 to-pink-500
+              py-3 text-sm font-medium text-white
               hover:opacity-90 transition"
             >
               <span className="inline-flex items-center gap-2 justify-center">
@@ -351,3 +416,4 @@ export default function ContactSection() {
     </section>
   );
 }
+
