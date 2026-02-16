@@ -241,7 +241,7 @@ export default function ContactSection() {
     <section id="contact" className="relative py-28 overflow-hidden">
       
       {/* Soft Glow Background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.15),transparent_60%)]" />
+      <div className="absolute inset-0 -z-10 " />
 
       <div ref={ref} className="max-w-6xl mx-auto px-4">
 
