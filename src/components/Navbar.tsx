@@ -174,7 +174,7 @@ export default function Navbar() {
         {/* DESKTOP CTA */}
         <div className="hidden md:flex items-center gap-3">
           <PrimaryButton>
-            <a href="/mahesh__dhulipudi.pdf" download>
+            <a href="/maheshdhulipudi_fullstack.pdf" download>
               Resume
             </a>
           </PrimaryButton>

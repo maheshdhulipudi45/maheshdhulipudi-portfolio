@@ -276,7 +276,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
             <a
-              href="/mahesh__dhulipudi.pdf"
+              href="/maheshdhulipudi_fullstack.pdf"
               download
               className="inline-flex items-center justify-center gap-2 rounded-full 
               bg-gradient-to-r from-purple-500 to-pink-500 
