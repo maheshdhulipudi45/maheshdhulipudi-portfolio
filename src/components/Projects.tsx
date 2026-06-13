@@ -198,24 +198,14 @@ const techIcons: Record<string, ReactNode> = {
 /* PROJECT DATA */
 const projects = [
   {
-    category: "AI • FULL-STACK",
-    title: "ThumblifyAI",
-    subtitle: "AI Thumbnail Generator",
+    category: "BUSINESS • CORPORATE WEBSITE",
+    title: "SVGK",
+    subtitle: "Business & Services Website",
     description:
-      "An AI-powered application that generates high-quality YouTube thumbnails using prompts with OpenAI integration and a modern full-stack architecture.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI", "Tailwind CSS"],
-    github: "https://github.com/maheshdhulipudi45/Thumblify-AI.git",
-    live: "https://thumblify-ai-murex.vercel.app/",
-  },
-  {
-    category: "BUSINESS • EVENT SERVICES",
-    title: "Bharath Events",
-    subtitle: "Tent House & Event Rental Platform",
-    description:
-      "A professional event management and tent house rental website that showcases wedding, party, and event services. Customers can explore tent setups, decorations, seating arrangements, lighting solutions, and contact the business for bookings through a modern and responsive web experience.",
+      "A responsive business website designed to showcase company services, organizational information, and customer-focused solutions. Built with a modern UI and smooth navigation to provide a professional digital presence.",
     tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
-    github: "https://github.com/maheshdhulipudi45/Bharath-Events",
-    live: "https://bharath-th.vercel.app/",
+    github: "https://github.com/maheshdhulipudi45/svgk",
+    live: "https://svgk-wuxg.vercel.app/",
   },
   {
     category: "BUSINESS • SWEETS SHOP",
@@ -228,14 +218,14 @@ const projects = [
     live: "https://sribharathsweets.vercel.app/",
   },
   {
-    category: "BUSINESS • CORPORATE WEBSITE",
-    title: "SVGK",
-    subtitle: "Business & Services Website",
+    category: "BUSINESS • EVENT SERVICES",
+    title: "Bharath Events",
+    subtitle: "Tent House & Event Rental Platform",
     description:
-      "A responsive business website designed to showcase company services, organizational information, and customer-focused solutions. Built with a modern UI and smooth navigation to provide a professional digital presence.",
+      "A professional event management and tent house rental website that showcases wedding, party, and event services. Customers can explore tent setups, decorations, seating arrangements, lighting solutions, and contact the business for bookings through a modern and responsive web experience.",
     tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
-    github: "https://github.com/maheshdhulipudi45/svgk",
-    live: "https://svgk-wuxg.vercel.app/",
+    github: "https://github.com/maheshdhulipudi45/Bharath-Events",
+    live: "https://bharath-th.vercel.app/",
   },
   {
     category: "FULL-STACK",
@@ -246,6 +236,16 @@ const projects = [
     tech: ["React", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/maheshdhulipudi45/CampusFix-Project.git",
     live: "https://campus-fix-project.vercel.app/",
+  },
+  {
+    category: "AI • FULL-STACK",
+    title: "ThumblifyAI",
+    subtitle: "AI Thumbnail Generator",
+    description:
+      "An AI-powered application that generates high-quality YouTube thumbnails using prompts with OpenAI integration and a modern full-stack architecture.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "OpenAI", "Tailwind CSS"],
+    github: "https://github.com/maheshdhulipudi45/Thumblify-AI.git",
+    live: "https://thumblify-ai-murex.vercel.app/",
   },
 ];
 

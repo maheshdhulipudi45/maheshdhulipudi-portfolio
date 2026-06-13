@@ -51,11 +51,11 @@ export default function Footer() {
                 Featured Projects
               </h3>
               <ul className="text-sm space-y-2 text-gray-400">
-                <li><a href="#projects" className="hover:text-white transition">ThumblifyAI</a></li>
-                <li><a href="#projects" className="hover:text-white transition">Bharath Events</a></li>
-                <li><a href="#projects" className="hover:text-white transition">Sri Bharath Sweets</a></li>
                 <li><a href="#projects" className="hover:text-white transition">SVGK</a></li>
+                <li><a href="#projects" className="hover:text-white transition">Sri Bharath Sweets</a></li>
+                <li><a href="#projects" className="hover:text-white transition">Bharath Events</a></li>
                 <li><a href="#projects" className="hover:text-white transition">CampusFix</a></li>
+                <li><a href="#projects" className="hover:text-white transition">ThumblifyAI</a></li>
               </ul>
             </div>
 
