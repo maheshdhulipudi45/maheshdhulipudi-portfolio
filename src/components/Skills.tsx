@@ -104,7 +104,6 @@ import {
   SiJavascript,
   SiHtml5,
   SiCss3,
-  SiTailwindcss,
   SiNodedotjs,
   SiExpress,
   SiJsonwebtokens,
@@ -113,65 +112,65 @@ import {
   SiGit,
   SiGithub,
   SiPostman,
+  SiVercel,
+  SiNetlify,
+  SiReactrouter,
 } from "react-icons/si";
 
 import { VscCode } from "react-icons/vsc";
 import { FaJava } from "react-icons/fa";
+import { Terminal, Monitor, Server, Database, Wrench, MonitorSmartphone, Cpu } from "lucide-react";
 
-/* BRAND COLORS */
-const iconColors: Record<string, string> = {
-  React: "#61DAFB",
-  JavaScript: "#F7DF1E",
-  HTML: "#E34F26",
-  CSS: "#1572B6",
-  "Tailwind CSS": "#38BDF8",
-  "Node.js": "#339933",
-  "Express.js": "#ffffff",
-  "JWT Auth": "#F00000",
-  MongoDB: "#47A248",
-  MySQL: "#4479A1",
-  Git: "#F05032",
-  GitHub: "#ffffff",
-  Postman: "#FF6C37",
-  "VS Code": "#007ACC",
-  Java: "#ED8B00",
-};
-
-/* SKILLS DATA */
+/* SKILLS DATA DEFINITIONS */
 const skillGroups = [
   {
-    title: "Frontend",
+    title: "Languages",
+    icon: Terminal,
     skills: [
-      { name: "React", icon: SiReact },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "HTML", icon: SiHtml5 },
-      { name: "CSS", icon: SiCss3 },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Java", icon: FaJava, color: "#ED8B00" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "SQL", icon: Database, color: "#4479A1" },
+    ],
+  },
+  {
+    title: "Frontend",
+    icon: Monitor,
+    skills: [
+      { name: "React.js", icon: SiReact, color: "#61DAFB" },
+      { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+      { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+      { name: "Responsive Web Design", icon: MonitorSmartphone, color: "#38BDF8" },
+      { name: "React Router DOM", icon: SiReactrouter, color: "#CA4245" },
     ],
   },
   {
     title: "Backend",
+    icon: Server,
     skills: [
-      { name: "Node.js", icon: SiNodedotjs },
-      { name: "Express.js", icon: SiExpress },
-      { name: "JWT Auth", icon: SiJsonwebtokens },
-      { name: "Java", icon: FaJava }, // ✅ FIXED
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+      { name: "Express.js", icon: SiExpress, color: "#ffffff" },
+      { name: "REST API Development", icon: Cpu, color: "#A855F7" },
+      { name: "JWT Authentication", icon: SiJsonwebtokens, color: "#F00000" },
     ],
   },
   {
     title: "Database",
+    icon: Database,
     skills: [
-      { name: "MongoDB", icon: SiMongodb },
-      { name: "MySQL", icon: SiMysql },
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "MySQL", icon: SiMysql, color: "#4479A1" },
     ],
   },
   {
-    title: "Tools",
+    title: "Tools & Platforms",
+    icon: Wrench,
     skills: [
-      { name: "Git", icon: SiGit },
-      { name: "GitHub", icon: SiGithub },
-      { name: "Postman", icon: SiPostman },
-      { name: "VS Code", icon: VscCode },
+      { name: "Git", icon: SiGit, color: "#F05032" },
+      { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+      { name: "VS Code", icon: VscCode, color: "#007ACC" },
+      { name: "Vercel", icon: SiVercel, color: "#ffffff" },
+      { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
     ],
   },
 ];
@@ -215,66 +214,75 @@ export default function Skills() {
           Skills
         </span>
 
-        <h2 className="mt-3 text-3xl md:text-4xl font-bold">
-          Technical{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-tr from-purple-500 to-pink-500">
-            Skills
-          </span>
+        <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">
+          Technical Skills
         </h2>
 
-        <p className="mt-4 text-gray-400 max-w-xl mx-auto">
-          Technologies I use to build modern, scalable web applications.
+        <p className="mt-4 text-gray-400 max-w-xl mx-auto text-base leading-relaxed">
+          Technologies and tools I use to build modern, scalable, and responsive web applications.
         </p>
       </motion.div>
 
-      {/* GRID */}
+      {/* GRID (Responsive layout matching SaaS and freelance standards) */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-80px" }}
-        className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto items-stretch"
       >
-        {skillGroups.map((group) => (
-          <motion.div
-            key={group.title}
-            variants={itemVariants}
-            whileHover={{ y: -6, scale: 1.02 }}
-            className="relative p-[1.5px] rounded-3xl bg-gradient-to-b from-purple-500/20 to-pink-500/10 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)] group"
-          >
-            {/* Inner Content Wrapper */}
-            <div className="rounded-[23px] bg-gradient-to-b from-[#150f29] to-[#0c0818] backdrop-blur-xl p-6 h-full flex flex-col">
-              <h3 className="text-lg font-bold text-white mb-5 group-hover:text-purple-300 transition-colors">
-                {group.title}
-              </h3>
+        {skillGroups.map((group) => {
+          const CategoryIcon = group.icon;
+          return (
+            <motion.div
+              key={group.title}
+              variants={itemVariants}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="relative p-[1.5px] rounded-3xl bg-gradient-to-b from-purple-500/20 to-pink-500/10 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)] group"
+            >
+              {/* Inner Content Wrapper */}
+              <div className="rounded-[23px] bg-gradient-to-b from-[#150f29] to-[#0c0818] backdrop-blur-xl p-6 h-full flex flex-col justify-start">
+                
+                {/* Card Header: Category Icon & Title */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-300">
+                    <CategoryIcon size={20} />
+                  </div>
+                  <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+                    {group.title}
+                  </h3>
+                </div>
 
-              <div className="flex flex-wrap gap-3">
-                {group.skills.map((skill) => {
-                  const Icon = skill.icon;
-                  return (
-                    <motion.div
-                      key={skill.name}
-                      whileHover={{ scale: 1.05, rotate: 2 }}
-                      className="group/badge flex items-center gap-2 px-3 py-2 rounded-full
-                      bg-white/5 border border-white/10
-                      hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500
-                      hover:border-transparent transition-all duration-300 cursor-default"
-                    >
-                      <Icon
-                        size={16}
-                        style={{ color: iconColors[skill.name] }}
-                        className="group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-all"
-                      />
-                      <span className="text-xs font-semibold text-gray-200 group-hover/badge:text-white transition-colors">
-                        {skill.name}
-                      </span>
-                    </motion.div>
-                  );
-                })}
+                {/* Skills Badges List */}
+                <div className="flex flex-wrap gap-2.5">
+                  {group.skills.map((skill) => {
+                    const SkillIcon = skill.icon;
+                    return (
+                      <motion.div
+                        key={skill.name}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="group/badge flex items-center gap-2 px-3.5 py-2 rounded-xl
+                        bg-white/5 border border-white/10
+                        hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500
+                        hover:border-transparent transition-all duration-300 cursor-default"
+                      >
+                        <SkillIcon
+                          size={16}
+                          style={{ color: skill.color }}
+                          className="group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-all"
+                        />
+                        <span className="text-xs font-semibold text-gray-200 group-hover/badge:text-white transition-colors">
+                          {skill.name}
+                        </span>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </motion.div>
     </section>
   );
