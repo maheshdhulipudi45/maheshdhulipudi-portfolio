@@ -271,8 +271,17 @@ const internships = [
   },
 ];
 
+interface Internship {
+  role: string;
+  company: string;
+  duration: string;
+  location: string;
+  description: string;
+  image: string;
+}
+
 export default function InternshipSection() {
-  const [active, setActive] = useState<any>(null);
+  const [active, setActive] = useState<Internship | null>(null);
 
   return (
     <section id="experience" className="py-28">

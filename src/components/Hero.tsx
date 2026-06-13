@@ -170,10 +170,10 @@ export default function Hero() {
 
         {/* 🔥 IMAGE FIRST ON MOBILE */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 160 }}
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
           className="relative flex justify-center md:order-2"
         >
           <div className="relative">
@@ -181,41 +181,41 @@ export default function Hero() {
             {/* 🔄 Rotating gradient border */}
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+              transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
               className="absolute inset-0 rounded-full 
-              bg-gradient-to-tr from-purple-500 via-pink-500 to-cyan-400 blur-lg opacity-70"
+              bg-gradient-to-tr from-purple-500 via-pink-500 to-cyan-400 blur-xl opacity-60"
             />
 
-            {/* Floating image */}
+            {/* Floating image wrapper */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="relative rounded-full p-1 bg-gradient-to-tr from-purple-500 to-pink-500"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+              className="relative rounded-full p-1.5 bg-gradient-to-tr from-purple-500 to-pink-500 shadow-2xl"
             >
               <img
                 src="/mahesh.png" // 🔴 your professional image
-                alt="Mahesh"
-                className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover bg-black"
+                alt="Mahesh Dhulipudi"
+                className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover bg-black relative z-10"
               />
             </motion.div>
 
-            {/* 🔵 Floating dots */}
+            {/* 🔵 Floating dots with 2D motion and glow */}
             <motion.span
-              animate={{ y: [0, -12, 0] }}
-              transition={{ repeat: Infinity, duration: 3 }}
-              className="absolute -top-4 right-6 w-4 h-4 rounded-full bg-purple-500"
+              animate={{ y: [0, -15, 0], x: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -top-4 right-6 w-4 h-4 rounded-full bg-purple-500 shadow-[0_0_12px_rgba(168,85,247,0.8)]"
             />
 
             <motion.span
-              animate={{ y: [0, 14, 0] }}
-              transition={{ repeat: Infinity, duration: 4 }}
-              className="absolute bottom-6 -left-6 w-3 h-3 rounded-full bg-pink-500"
+              animate={{ y: [0, 15, 0], x: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+              className="absolute bottom-6 -left-6 w-3 h-3 rounded-full bg-pink-500 shadow-[0_0_12px_rgba(236,72,153,0.8)]"
             />
 
             <motion.span
-              animate={{ x: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 5 }}
-              className="absolute top-1/2 -right-8 w-2.5 h-2.5 rounded-full bg-cyan-400"
+              animate={{ x: [0, 12, 0], y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              className="absolute top-1/2 -right-8 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]"
             />
           </div>
         </motion.div>
@@ -224,96 +224,91 @@ export default function Hero() {
         <div className="md:order-1 text-center md:text-left">
 
           <motion.p
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs tracking-widest text-purple-400 mb-4 uppercase"
+            transition={{ type: "spring", stiffness: 120 }}
+            className="text-xs tracking-widest text-purple-400 mb-4 uppercase font-semibold"
           >
             Welcome to my portfolio
           </motion.p>
 
           <motion.h1
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold leading-tight mb-3"
+            transition={{ delay: 0.1, type: "spring", stiffness: 120 }}
+            className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tight"
           >
             Hi, I’m{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-              Mahesh
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-400 font-extrabold">
+              Mahesh Dhulipudi
             </span>
           </motion.h1>
 
           <motion.h2
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            className="text-lg md:text-xl font-semibold text-pink-400 mb-6"
+            transition={{ delay: 0.15, type: "spring", stiffness: 120 }}
+            className="text-lg md:text-2xl font-bold tracking-tight mb-6 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent"
           >
-            Full Stack Developer
+            MERN Stack Developer & Freelance Web Developer
           </motion.h2>
 
           <motion.p
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-300 max-w-lg mb-8 mx-auto md:mx-0"
+            transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+            className="text-gray-300 max-w-lg mb-8 mx-auto md:mx-0 text-base md:text-[17px] leading-relaxed font-normal"
           >
-            Crafting modern, responsive, and scalable web applications using the
-            MERN stack. Passionate about clean code and exceptional user
-            experiences.
+            Passionate about building modern, responsive, and scalable web applications. I specialize in React.js, Node.js, Express.js, MongoDB, JavaScript, Java, and SQL, helping businesses and individuals transform ideas into digital solutions.
           </motion.p>
 
           {/* CTA */}
           <motion.div
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.25, type: "spring", stiffness: 120 }}
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
-            <a
+            <motion.a
               href="/maheshdhulipudi_fullstack.pdf"
               download
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(168,85,247,0.4)" }}
+              whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 rounded-full 
               bg-gradient-to-r from-purple-500 to-pink-500 
-              px-7 py-3 text-sm font-medium text-white shadow-lg hover:opacity-90 transition"
+              px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all"
             >
               <DownloadIcon size={16} />
               Download Resume
-            </a>
+            </motion.a>
 
-            <a
-              href=" tel: +917658956116"
+            <motion.a
+              href="tel:+917658956116"
+              whileHover={{ scale: 1.05, border: "1px solid rgba(255,255,255,0.3)", backgroundColor: "rgba(255,255,255,0.08)" }}
+              whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 rounded-full 
-              border border-white/15 bg-white/5 px-7 py-3 text-sm text-white 
-              backdrop-blur hover:bg-white/10 transition"
+              border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white 
+              backdrop-blur transition-all"
             >
-              <Phone size={16} />
+              <Phone size={16} className="text-pink-400" />
               Contact Me
               <ArrowRightIcon size={16} />
-            </a>
+            </motion.a>
           </motion.div>
 
           {/* Highlights */}
           <motion.div
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.3 }}
             className="mt-10 flex gap-6 text-sm text-gray-300 justify-center md:justify-start"
           >
-            {/* <div className="flex items-center gap-2">
-              <CheckIcon size={16} className="text-green-400" />
-              MERN Stack
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckIcon size={16} className="text-green-400" />
-              Scalable Apps
-            </div> */}
           </motion.div>
         </div>
       </div>

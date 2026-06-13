@@ -120,28 +120,24 @@ export default function About() {
         hover:shadow-xl hover:shadow-purple-600/20 transition"
       >
         {/* Paragraph 1 */}
-        <p className="text-gray-300 leading-relaxed text-justify [hyphens:auto]">
-          I’m <span className="text-white font-medium">Mahesh Dhulipudi</span>, 
-          a Full Stack Developer specializing in the MERN stack, with a strong 
-          foundation in building scalable and performance-driven web applications. 
-          I transform ideas into fully functional digital solutions by combining 
-          intuitive user interfaces with robust backend architecture.
+        <p className="text-gray-300 leading-relaxed text-justify [hyphens:auto] text-base md:text-lg">
+          Hi, I’m <span className="text-white font-semibold">Mahesh Dhulipudi</span>, 
+          an MCA graduate, MERN Stack Developer, and Freelance Web Developer passionate 
+          about building modern, scalable, and user-friendly web applications. I specialize 
+          in React.js, Node.js, Express.js, MongoDB, JavaScript, Java, and SQL.
         </p>
 
         {/* Paragraph 2 */}
-        <p className="mt-4 text-gray-300 leading-relaxed text-justify [hyphens:auto]">
-          My expertise includes developing RESTful APIs, implementing secure 
-          authentication systems, integrating third-party services, and designing 
-          responsive front-end experiences. I focus on writing clean, maintainable 
-          code while ensuring performance optimization and seamless user interaction.
+        <p className="mt-5 text-gray-300 leading-relaxed text-justify [hyphens:auto] text-base md:text-lg">
+          Through academic and freelance projects, I have gained hands-on experience 
+          in developing responsive full-stack applications, solving real-world problems, 
+          and delivering quality digital solutions.
         </p>
 
         {/* Paragraph 3 */}
-        <p className="mt-4 text-gray-300 leading-relaxed text-justify [hyphens:auto]">
-          I continuously explore emerging technologies and modern development 
-          practices to enhance product quality and efficiency. My goal is to 
-          contribute to impactful projects where technology solves real-world 
-          problems through innovation and precision.
+        <p className="mt-5 text-gray-300 leading-relaxed text-justify [hyphens:auto] text-base md:text-lg">
+          I am continuously learning new technologies and striving to create 
+          impactful software experiences.
         </p>
 
         {/* Highlights */}

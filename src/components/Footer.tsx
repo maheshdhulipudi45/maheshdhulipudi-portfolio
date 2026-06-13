@@ -18,18 +18,16 @@ export default function Footer() {
               Mahesh Dhulipudi
             </h2>
             <p className="mt-1 text-sm text-purple-400">
-              Full Stack Developer (MERN)
+              MERN Stack Developer & Freelance Web Developer
             </p>
 
             <p className="max-w-[420px] mt-5 text-sm leading-relaxed text-gray-300">
-              Passionate Full Stack Developer crafting modern, responsive, and
-              scalable web applications using the MERN stack. Focused on clean
-              code, performance, and great user experiences.
+              MCA graduate, MERN Stack Developer, and Freelance Web Developer passionate about building modern, responsive, and scalable web applications. Focused on clean code, performance, and delivering custom digital solutions.
             </p>
           </div>
 
           {/* RIGHT LINKS */}
-          <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-8">
+          <div className="flex flex-wrap justify-between w-full md:w-[55%] gap-8">
             
             {/* Quick Links */}
             <div>
@@ -39,7 +37,10 @@ export default function Footer() {
               <ul className="text-sm space-y-2">
                 <li><a href="#home" className="hover:text-white transition">Home</a></li>
                 <li><a href="#about" className="hover:text-white transition">About</a></li>
+                <li><a href="#skills" className="hover:text-white transition">Skills</a></li>
                 <li><a href="#projects" className="hover:text-white transition">Projects</a></li>
+                <li><a href="#experience" className="hover:text-white transition">Internships</a></li>
+                <li><a href="#certificates" className="hover:text-white transition">Certifications</a></li>
                 <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
               </ul>
             </div>
@@ -47,12 +48,14 @@ export default function Footer() {
             {/* Projects */}
             <div>
               <h3 className="font-semibold text-base text-white mb-3">
-                Projects
+                Featured Projects
               </h3>
-              <ul className="text-sm space-y-2">
-                <li>CampusFix</li>
-                <li>SportsInfo</li>
-                <li>RestroPoint</li>
+              <ul className="text-sm space-y-2 text-gray-400">
+                <li><a href="#projects" className="hover:text-white transition">ThumblifyAI</a></li>
+                <li><a href="#projects" className="hover:text-white transition">Bharath Events</a></li>
+                <li><a href="#projects" className="hover:text-white transition">Sri Bharath Sweets</a></li>
+                <li><a href="#projects" className="hover:text-white transition">SVGK</a></li>
+                <li><a href="#projects" className="hover:text-white transition">CampusFix</a></li>
               </ul>
             </div>
 
@@ -72,8 +75,9 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/maheshdhulipudi"
+                    href="https://github.com/maheshdhulipudi45"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-white transition"
                   >
                     GitHub
@@ -83,9 +87,20 @@ export default function Footer() {
                   <a
                     href="https://linkedin.com/in/maheshdhulipudi"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-white transition"
                   >
                     LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/917658956116"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-emerald-400 transition"
+                  >
+                    WhatsApp
                   </a>
                 </li>
               </ul>

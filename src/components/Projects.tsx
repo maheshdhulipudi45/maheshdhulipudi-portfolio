@@ -163,8 +163,8 @@
 
 
 
-  import { motion } from "framer-motion";
-import { GithubIcon, ExternalLinkIcon } from "lucide-react";
+import { motion } from "framer-motion";
+import { GithubIcon, ExternalLinkIcon, MonitorSmartphone } from "lucide-react";
 import type { ReactNode } from "react";
 
 import {
@@ -176,6 +176,7 @@ import {
   SiCss3,
   SiOpenai,
   SiTailwindcss,
+  SiHtml5,
 } from "react-icons/si";
 
 /* TECHNOLOGY ICON MAP */
@@ -188,6 +189,10 @@ const techIcons: Record<string, ReactNode> = {
   CSS: <SiCss3 color="#1572B6" />,
   "Tailwind CSS": <SiTailwindcss color="#38BDF8" />,
   OpenAI: <SiOpenai color="#ffffff" />,
+  HTML5: <SiHtml5 color="#E34F26" />,
+  CSS3: <SiCss3 color="#1572B6" />,
+  HTML: <SiHtml5 color="#E34F26" />,
+  "Responsive Design": <MonitorSmartphone size={14} className="text-cyan-400" />,
 };
 
 /* PROJECT DATA */
@@ -203,6 +208,36 @@ const projects = [
     live: "https://thumblify-ai-murex.vercel.app/",
   },
   {
+    category: "BUSINESS • EVENT SERVICES",
+    title: "Bharath Events",
+    subtitle: "Tent House & Event Rental Platform",
+    description:
+      "A professional event management and tent house rental website that showcases wedding, party, and event services. Customers can explore tent setups, decorations, seating arrangements, lighting solutions, and contact the business for bookings through a modern and responsive web experience.",
+    tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
+    github: "https://github.com/maheshdhulipudi45/Bharath-Events",
+    live: "https://bharath-th.vercel.app/",
+  },
+  {
+    category: "BUSINESS • SWEETS SHOP",
+    title: "Sri Bharath Sweets",
+    subtitle: "Traditional Sweets Business Website",
+    description:
+      "A modern business website developed for a traditional sweets shop to showcase products, special sweets, snacks, and business information. Designed to improve online visibility and customer engagement through an attractive and responsive user interface.",
+    tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
+    github: "https://github.com/maheshdhulipudi45/sribharathsweets",
+    live: "https://sribharathsweets.vercel.app/",
+  },
+  {
+    category: "BUSINESS • CORPORATE WEBSITE",
+    title: "SVGK",
+    subtitle: "Business & Services Website",
+    description:
+      "A responsive business website designed to showcase company services, organizational information, and customer-focused solutions. Built with a modern UI and smooth navigation to provide a professional digital presence.",
+    tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
+    github: "https://github.com/maheshdhulipudi45/svgk",
+    live: "https://svgk-wuxg.vercel.app/",
+  },
+  {
     category: "FULL-STACK",
     title: "CampusFix",
     subtitle: "Campus Electrical Issue Management System",
@@ -212,27 +247,30 @@ const projects = [
     github: "https://github.com/maheshdhulipudi45/CampusFix-Project.git",
     live: "https://campus-fix-project.vercel.app/",
   },
-  {
-    category: "FRONTEND • REACT",
-    title: "SportsInfo",
-    subtitle: "Live Sports Updates Platform",
-    description:
-      "Frontend application providing real-time sports scores and player statistics using third-party APIs.",
-    tech: ["React", "JavaScript", "CSS"],
-    github: "https://github.com/maheshdhulipudi45/SportsInfo.git",
-    live: "https://sports-info.vercel.app/",
-  },
-  {
-    category: "FRONTEND",
-    title: "RestroPoint",
-    subtitle: "Restaurant Website",
-    description:
-      "A modern restaurant website showcasing menu items, reservations, and services.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/maheshdhulipudi45/RestroPointWebsite.git",
-    live: "https://restro-point-website.vercel.app/",
-  },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 40, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
 
 export default function Projects() {
   return (
@@ -240,13 +278,13 @@ export default function Projects() {
 
       {/* HEADING */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ type: "spring", stiffness: 160 }}
+        transition={{ type: "spring", stiffness: 120 }}
         className="mb-16 text-center"
       >
-        <span className="text-sm uppercase tracking-widest text-purple-400">
+        <span className="text-sm uppercase tracking-widest text-purple-400 font-semibold">
           Projects
         </span>
 
@@ -262,79 +300,87 @@ export default function Projects() {
         </p>
       </motion.div>
 
-      {/* GRID 2x2 */}
-      <div className="grid gap-10 md:grid-cols-2">
-        {projects.map((project, i) => (
+      {/* GRID 2x2 / 3x3 */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid gap-10 md:grid-cols-2 items-stretch"
+      >
+        {projects.map((project) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -6 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.12, type: "spring", stiffness: 160 }}
-            className="rounded-3xl border border-purple-500/20
-            bg-gradient-to-b from-[#1a1333] to-[#120c24]
-            backdrop-blur-xl p-7 shadow-lg
-            hover:shadow-purple-600/25 transition flex flex-col"
+            variants={itemVariants}
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="relative p-[1.5px] rounded-3xl bg-gradient-to-b from-purple-500/20 to-pink-500/10 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.25)] group flex flex-col"
           >
-            <span className="mb-4 inline-block rounded-full bg-purple-500/10 px-4 py-1 text-xs font-semibold text-purple-300">
-              {project.category}
-            </span>
+            {/* Inner Content Container */}
+            <div className="rounded-[23px] bg-gradient-to-b from-[#150f29] to-[#0c0818] backdrop-blur-xl p-7 flex flex-col h-full">
+              <span className="mb-4 inline-block w-fit rounded-full bg-purple-500/10 px-4 py-1 text-xs font-bold text-purple-300 border border-purple-500/20">
+                {project.category}
+              </span>
 
-            <h3 className="text-xl font-semibold text-white mb-1">
-              {project.title}
-            </h3>
+              <h3 className="text-xl font-bold text-white mb-1 group-hover:text-purple-300 transition-colors">
+                {project.title}
+              </h3>
 
-            <p className="text-sm text-purple-300 mb-4">
-              {project.subtitle}
-            </p>
+              <p className="text-sm text-purple-400 mb-4 font-medium">
+                {project.subtitle}
+              </p>
 
-            <p className="text-gray-300 text-sm mb-6">
-              {project.description}
-            </p>
+              <p className="text-gray-300 text-sm mb-6 leading-relaxed flex-grow">
+                {project.description}
+              </p>
 
-            {/* TECH ICONS */}
-            <div className="flex flex-wrap gap-3 mb-6">
-              {project.tech.map((tech) => (
-                <div
-                  key={tech}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full
-                  bg-purple-500/10 border border-purple-500/20 text-xs text-purple-200"
+              {/* TECH ICONS */}
+              <div className="flex flex-wrap gap-2.5 mb-6">
+                {project.tech.map((tech) => (
+                  <div
+                    key={tech}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full
+                    bg-purple-500/5 border border-purple-500/10 text-xs text-purple-200/90
+                    hover:bg-purple-500/25 hover:text-white hover:border-purple-500/30 hover:scale-105 transition-all cursor-default"
+                  >
+                    {techIcons[tech]}
+                    <span>{tech}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* ACTIONS */}
+              <div className="mt-auto flex gap-4">
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex-1 rounded-xl bg-white/5 border border-white/10 py-2.5 text-sm font-semibold text-white
+                  hover:bg-white/10 hover:border-purple-500/30 transition-all inline-flex items-center justify-center gap-2"
                 >
-                  {techIcons[tech]}
-                  {tech}
-                </div>
-              ))}
-            </div>
+                  <GithubIcon size={16} className="text-gray-300" />
+                  Code
+                </motion.a>
 
-            {/* ACTIONS */}
-            <div className="mt-auto flex gap-3">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 rounded-lg bg-black py-2 text-sm text-white
-                hover:bg-black/80 transition inline-flex items-center justify-center gap-2"
-              >
-                <GithubIcon size={16} />
-                Code
-              </a>
-
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 rounded-lg bg-gradient-to-r
-                from-purple-500 to-pink-500 py-2 text-sm text-white
-                hover:opacity-90 transition inline-flex items-center justify-center gap-2"
-              >
-                <ExternalLinkIcon size={16} />
-                Live
-              </a>
+                <motion.a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03, boxShadow: "0px 0px 12px rgba(168,85,247,0.4)" }}
+                  whileTap={{ scale: 0.97 }}
+                  className="flex-1 rounded-xl bg-gradient-to-r
+                  from-purple-500 to-pink-500 py-2.5 text-sm font-semibold text-white
+                  hover:from-purple-600 hover:to-pink-600 transition-all inline-flex items-center justify-center gap-2"
+                >
+                  <ExternalLinkIcon size={16} />
+                  Live
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

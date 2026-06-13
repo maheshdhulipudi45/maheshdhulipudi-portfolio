@@ -112,7 +112,7 @@
 // }
 
 
-import { MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, XIcon, Home, User, Code, Briefcase, GraduationCap, Award, Mail } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PrimaryButton } from "./Buttons";
@@ -121,11 +121,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/#home" },
-    { name: "About", href: "/#about" },
-    { name: "Skills", href: "/#skills" },
-    { name: "Projects", href: "/#projects" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Home", href: "/#home", icon: Home },
+    { name: "About", href: "/#about", icon: User },
+    { name: "Skills", href: "/#skills", icon: Code },
+    { name: "Projects", href: "/#projects", icon: Briefcase },
+    { name: "Internships", href: "/#experience", icon: GraduationCap },
+    { name: "Certifications", href: "/#certificates", icon: Award },
+    { name: "Contact", href: "/#contact", icon: Mail },
   ];
 
   return (
@@ -135,7 +137,7 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
     >
-      {/* NAV BAR */}
+      {/* NAV BAR CONTAINER */}
       <div
         className="max-w-6xl mx-auto flex items-center justify-between
         rounded-2xl border border-purple-500/20
@@ -155,8 +157,8 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* DESKTOP LINKS */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        {/* DESKTOP LINKS (lg screens) */}
+        <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-300">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -164,7 +166,7 @@ export default function Navbar() {
               className="relative hover:text-white transition
               after:absolute after:-bottom-1 after:left-0 after:h-[2px]
               after:w-0 after:bg-gradient-to-r after:from-purple-500 after:to-pink-500
-              hover:after:w-full after:transition-all"
+              hover:after:w-full after:transition-all duration-300"
             >
               {link.name}
             </a>
@@ -172,7 +174,7 @@ export default function Navbar() {
         </div>
 
         {/* DESKTOP CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <PrimaryButton>
             <a href="/maheshdhulipudi_fullstack.pdf" download>
               Resume
@@ -180,47 +182,83 @@ export default function Navbar() {
           </PrimaryButton>
         </div>
 
-        {/* MOBILE TOGGLE */}
-        <button onClick={() => setIsOpen(true)} className="md:hidden text-white">
+        {/* MOBILE TOGGLE button (lg hidden) */}
+        <button onClick={() => setIsOpen(true)} className="lg:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors">
           <MenuIcon className="size-6" />
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE NAV MENU DRAWER */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", stiffness: 200, damping: 25 }}
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xl
-            flex flex-col items-center justify-center gap-8"
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-xl font-medium text-gray-300 hover:text-white transition"
-              >
-                {link.name}
-              </a>
-            ))}
-
-            <PrimaryButton onClick={() => setIsOpen(false)}>
-              <a href="/Mahesh_Resume.pdf" download>
-                Download Resume
-              </a>
-            </PrimaryButton>
-
-            <button
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="mt-6 rounded-full bg-white p-3 text-black"
+              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm lg:hidden"
+            />
+
+            {/* Slide-out Menu Panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 220, damping: 26 }}
+              className="fixed right-0 top-0 bottom-0 z-50 w-full max-w-[300px] 
+              bg-[#0c081d]/90 backdrop-blur-2xl border-l border-purple-500/20
+              flex flex-col p-6 shadow-2xl lg:hidden"
             >
-              <XIcon />
-            </button>
-          </motion.div>
+              {/* Close Header */}
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xs font-bold tracking-widest uppercase text-purple-400">
+                  Navigation
+                </span>
+                <motion.button
+                  whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.08)" }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setIsOpen(false)}
+                  className="rounded-full p-2 text-gray-400 hover:text-white border border-white/10"
+                >
+                  <XIcon size={16} />
+                </motion.button>
+              </div>
+
+              {/* Links with Icons and Hover Effects */}
+              <div className="flex flex-col gap-4 flex-grow">
+                {navLinks.map((link, idx) => {
+                  const LinkIcon = link.icon;
+                  return (
+                    <motion.a
+                      key={link.name}
+                      href={link.href}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.04 }}
+                      onClick={() => setIsOpen(false)}
+                      className="group flex items-center gap-4 py-2 px-3 rounded-xl border border-transparent hover:border-purple-500/10 hover:bg-purple-500/5 text-gray-300 hover:text-white transition-all text-sm font-semibold"
+                    >
+                      <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 group-hover:border-transparent group-hover:text-white transition-all text-purple-400">
+                        <LinkIcon size={16} className="transition-transform group-hover:scale-110" />
+                      </div>
+                      <span className="tracking-wide">{link.name}</span>
+                    </motion.a>
+                  );
+                })}
+              </div>
+
+              {/* Action Button at bottom */}
+              <div className="mt-auto pt-6 border-t border-purple-500/10">
+                <PrimaryButton className="w-full py-3" onClick={() => setIsOpen(false)}>
+                  <a href="/maheshdhulipudi_fullstack.pdf" download className="w-full block text-center">
+                    Download Resume
+                  </a>
+                </PrimaryButton>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.nav>

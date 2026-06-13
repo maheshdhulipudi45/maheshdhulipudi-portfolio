@@ -176,19 +176,42 @@ const skillGroups = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 30, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
+
 export default function Skills() {
   return (
     <section id="skills" className="max-w-7xl mx-auto px-4 py-28">
       
       {/* HEADING */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ type: "spring", stiffness: 180 }}
+        transition={{ type: "spring", stiffness: 120 }}
         className="mb-16 text-center"
       >
-        <span className="text-sm uppercase tracking-widest text-purple-400">
+        <span className="text-sm uppercase tracking-widest text-purple-400 font-semibold">
           Skills
         </span>
 
@@ -205,49 +228,54 @@ export default function Skills() {
       </motion.div>
 
       {/* GRID */}
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        {skillGroups.map((group, i) => (
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-80px" }}
+        className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+      >
+        {skillGroups.map((group) => (
           <motion.div
             key={group.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, type: "spring", stiffness: 180 }}
-            className="rounded-3xl border border-purple-500/20
-            bg-gradient-to-b from-[#1a1333] to-[#120c24]
-            backdrop-blur-xl p-6 hover:shadow-xl
-            hover:shadow-purple-600/20 transition"
+            variants={itemVariants}
+            whileHover={{ y: -6, scale: 1.02 }}
+            className="relative p-[1.5px] rounded-3xl bg-gradient-to-b from-purple-500/20 to-pink-500/10 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)] group"
           >
-            <h3 className="text-lg font-semibold text-white mb-5">
-              {group.title}
-            </h3>
+            {/* Inner Content Wrapper */}
+            <div className="rounded-[23px] bg-gradient-to-b from-[#150f29] to-[#0c0818] backdrop-blur-xl p-6 h-full flex flex-col">
+              <h3 className="text-lg font-bold text-white mb-5 group-hover:text-purple-300 transition-colors">
+                {group.title}
+              </h3>
 
-            <div className="flex flex-wrap gap-3">
-              {group.skills.map((skill) => {
-                const Icon = skill.icon;
-                return (
-                  <div
-                    key={skill.name}
-                    className="group flex items-center gap-2 px-3 py-2 rounded-full
-                    bg-white/5 border border-white/10
-                    hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500
-                    hover:border-transparent transition"
-                  >
-                    <Icon
-                      size={16}
-                      style={{ color: iconColors[skill.name] }}
-                      className="group-hover:scale-110 transition-transform"
-                    />
-                    <span className="text-xs font-medium text-gray-200 group-hover:text-white">
-                      {skill.name}
-                    </span>
-                  </div>
-                );
-              })}
+              <div className="flex flex-wrap gap-3">
+                {group.skills.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <motion.div
+                      key={skill.name}
+                      whileHover={{ scale: 1.05, rotate: 2 }}
+                      className="group/badge flex items-center gap-2 px-3 py-2 rounded-full
+                      bg-white/5 border border-white/10
+                      hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500
+                      hover:border-transparent transition-all duration-300 cursor-default"
+                    >
+                      <Icon
+                        size={16}
+                        style={{ color: iconColors[skill.name] }}
+                        className="group-hover/badge:scale-110 group-hover/badge:rotate-6 transition-all"
+                      />
+                      <span className="text-xs font-semibold text-gray-200 group-hover/badge:text-white transition-colors">
+                        {skill.name}
+                      </span>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
