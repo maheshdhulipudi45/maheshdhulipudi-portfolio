@@ -234,8 +234,8 @@ const projects = [
     description:
       "A MERN stack application for reporting and tracking campus electrical issues with authentication and role-based access.",
     tech: ["React", "Node.js", "Express", "MongoDB"],
-    github: "https://github.com/maheshdhulipudi45/CampusFix-Project.git",
-    live: "https://campus-fix-project.vercel.app/",
+    github: "https://github.com/maheshdhulipudi45/CampusFix-Main",
+    live: "https://campus-fix-main.vercel.app/",
   },
   {
     category: "AI • FULL-STACK",
