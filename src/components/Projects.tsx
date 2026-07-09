@@ -202,7 +202,7 @@ const projects = [
     title: "CampusFix",
     subtitle: "Campus Electrical Issue Management System",
     description:
-      "A MERN stack application for reporting and tracking campus electrical issues with authentication and role-based access.",
+      "A modern MERN stack web application that enables students to report campus maintenance issues such as electrical faults, water leakage, damaged infrastructure, and cleanliness concerns. Features secure JWT authentication, role-based access control, complaint tracking, image uploads, an admin dashboard for issue management, and a fully responsive user interface designed to streamline campus maintenance operations.",
     tech: ["React", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/maheshdhulipudi45/CampusFix-Main",
     live: "https://campus-fix-main.vercel.app/",
