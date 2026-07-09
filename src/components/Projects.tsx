@@ -198,6 +198,34 @@ const techIcons: Record<string, ReactNode> = {
 /* PROJECT DATA */
 const projects = [
   {
+    category: "FULL-STACK",
+    title: "CampusFix",
+    subtitle: "Campus Electrical Issue Management System",
+    description:
+      "A MERN stack application for reporting and tracking campus electrical issues with authentication and role-based access.",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/maheshdhulipudi45/CampusFix-Main",
+    live: "https://campus-fix-main.vercel.app/",
+  },
+  {
+  category: "FULL-STACK • EDTECH PLATFORM",
+  title: "AcadVault",
+  subtitle: "Academic Resource Sharing Platform",
+  description:
+    "A modern MERN stack platform that enables students to upload, discover, and download academic resources such as notes, previous question papers, lab records, PDFs, and study materials. Features secure JWT authentication, role-based access, advanced search, trending resources, latest uploads, bookmarks, and a responsive user interface designed to simplify academic resource sharing.",
+  tech: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "JWT",
+    "Tailwind CSS",
+    "Multer"
+  ],
+  github: "https://github.com/maheshdhulipudi45/Acadvaultsite",
+  live: "https://acadvaultsites.vercel.app/",
+},
+  {
     category: "BUSINESS • CORPORATE WEBSITE",
     title: "SVGK",
     subtitle: "Business & Services Website",
@@ -227,16 +255,7 @@ const projects = [
     github: "https://github.com/maheshdhulipudi45/Bharath-Events",
     live: "https://bharath-th.vercel.app/",
   },
-  {
-    category: "FULL-STACK",
-    title: "CampusFix",
-    subtitle: "Campus Electrical Issue Management System",
-    description:
-      "A MERN stack application for reporting and tracking campus electrical issues with authentication and role-based access.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-    github: "https://github.com/maheshdhulipudi45/CampusFix-Main",
-    live: "https://campus-fix-main.vercel.app/",
-  },
+  
   {
     category: "AI • FULL-STACK",
     title: "ThumblifyAI",
