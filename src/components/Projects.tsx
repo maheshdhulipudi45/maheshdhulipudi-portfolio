@@ -59,7 +59,7 @@ const projects = [
     "OpenRouter API",
     "Framer Motion"
   ],
-  github: "https://github.com/maheshdhulipudi45/PromptPilot",
+  github: "https://github.com/maheshdhulipudi45/Ai-ChatBox",
   live: "https://promptpilot-aichatbox.vercel.app/",
 },
   {
@@ -80,16 +80,16 @@ const projects = [
   github: "https://github.com/maheshdhulipudi45/Acadvaultsite",
   live: "https://acadvaultsites.vercel.app/",
 },
-  {
-    category: "BUSINESS • CORPORATE WEBSITE",
-    title: "SVGK",
-    subtitle: "Business & Services Website",
-    description:
-      "A responsive business website designed to showcase company services, organizational information, and customer-focused solutions. Built with a modern UI and smooth navigation to provide a professional digital presence.",
-    tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
-    github: "https://github.com/maheshdhulipudi45/svgk",
-    live: "https://svgk-wuxg.vercel.app/",
-  },
+  // {
+  //   category: "BUSINESS • CORPORATE WEBSITE",
+  //   title: "SVGK",
+  //   subtitle: "Business & Services Website",
+  //   description:
+  //     "A responsive business website designed to showcase company services, organizational information, and customer-focused solutions. Built with a modern UI and smooth navigation to provide a professional digital presence.",
+  //   tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
+  //   github: "https://github.com/maheshdhulipudi45/svgk",
+  //   live: "https://svgk-wuxg.vercel.app/",
+  // },
   {
     category: "BUSINESS • SWEETS SHOP",
     title: "Sri Bharath Sweets",
@@ -100,16 +100,16 @@ const projects = [
     github: "https://github.com/maheshdhulipudi45/sribharathsweets",
     live: "https://sribharathsweets.vercel.app/",
   },
-  {
-    category: "BUSINESS • EVENT SERVICES",
-    title: "Bharath Events",
-    subtitle: "Tent House & Event Rental Platform",
-    description:
-      "A professional event management and tent house rental website that showcases wedding, party, and event services. Customers can explore tent setups, decorations, seating arrangements, lighting solutions, and contact the business for bookings through a modern and responsive web experience.",
-    tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
-    github: "https://github.com/maheshdhulipudi45/Bharath-Events",
-    live: "https://bharath-th.vercel.app/",
-  },
+  // {
+  //   category: "BUSINESS • EVENT SERVICES",
+  //   title: "Bharath Events",
+  //   subtitle: "Tent House & Event Rental Platform",
+  //   description:
+  //     "A professional event management and tent house rental website that showcases wedding, party, and event services. Customers can explore tent setups, decorations, seating arrangements, lighting solutions, and contact the business for bookings through a modern and responsive web experience.",
+  //   tech: ["React", "JavaScript", "HTML5", "CSS3", "Responsive Design"],
+  //   github: "https://github.com/maheshdhulipudi45/Bharath-Events",
+  //   live: "https://bharath-th.vercel.app/",
+  // },
   
   {
     category: "AI • FULL-STACK",
